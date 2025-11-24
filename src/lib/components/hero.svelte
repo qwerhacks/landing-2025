@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Email from './email.svelte';
-	import Logo from './logo.svelte';
 </script>
 
 <div class="mt-auto" />
@@ -8,29 +7,53 @@
 <div
 	class="flex flex-col justify-center items-center gap-8 p-10 md:p-14 rounded-xl w-max lg:w-[60%] max-w-[95vw] md:max-w-[70vw]"
 >
-	<Logo />
+	<!-- Logo from 2023 commented out for now; replaced with plain heading text -->
+	<div
+		class="text-center font-milonga tracking-wide flex flex-col items-center gap-5 md:gap-6"
+	>
+		<span class="text-8xl md:text-6xl lg:text-7xl text-white qwer-title" style="text-shadow: 0 10px 30px rgba(0,0,0,0.45), 0 3px 8px rgba(34,34,34,0.2);"> ݁₊⊹.QWER Hacks.₊⊹</span>
+		<span class="text-4xl md:text-3xl lg:text-4xl" style="color: #1a1560; opacity: 0.9;">UCLA | Feb 7-8, 2026</span>
+	</div>
 	<Email />
 	<span
-		class="text-center text-white text-2xl lg:text-5xl font-reactor7 inline-block"
-		style="text-shadow:#200b3a 4px 0px 0px,#200b3a -4px 0px 0px,#200b3a 0px 4px 0px,#200b3a 0px -4px 0px"
-		>the lgbtqia community? <wbr />at MY hackathon???<br />it's more likely than you think.</span
+		class="text-center text-2xl lg:text-3xl font-montserrat_alternates_bold inline-block"
+		style="color: #1a1560; opacity: 0.9;"
+		>the lgbtqia community? <wbr />at MY hackathon???<br /><br />it's more likely than you think.</span
 	>
 </div>
 
+<!--2024's sponsorship form-->
 <div
-	class="mt-auto max-w-prose text-center py-5 px-5 text-white font-reactor7 text-2xl lg:text-3xl"
-	style="text-shadow:#200b3a 2px 0px 0px,#200b3a -2px 0px 0px,#200b3a 0px 2px 0px,#200b3a 0px -2px 0px"
+	class="mt-auto max-w-prose text-center py-5 px-5 text-white font-montserrat_alternates text-2xl lg:text-3xl"
 >
-	Interested in helping us make this event happen? <a href="https://drive.google.com/file/d/1bEVtQlb4Yw58R0a8gH0P0BWTpXJEpXQC/view" class="underline text-sky-light">Check out our sponsorship packet</a>!
+	<!--Interested in helping us make this event happen? <a href="https://drive.google.com/file/d/1bEVtQlb4Yw58R0a8gH0P0BWTpXJEpXQC/view" class="underline text-sky-light">Check out our sponsorship packet</a>!>-->
 </div>
 
 <style>
-	.outlined::after {
-		-webkit-text-fill-color: #200b3a;
-		color: red;
-		font-size: 4rem;
-		content: "the lgbtqia community? at MY hackathon???\nit's more likely than you think.";
-		position: absolute;
-		left: 0;
+	.qwer-title {
+		cursor: pointer;
+		position: relative;
+		transition: transform 0.3s ease, text-shadow 0.3s ease;
+	}
+
+	.qwer-title:hover {
+		transform: scale(1.05);
+		text-shadow: 0 10px 40px rgba(255,255,255,0.6), 0 3px 8px rgba(255,255,255,0.4);
+		animation: sparkle-glow 1.5s ease-in-out infinite;
+	}
+
+	@keyframes sparkle-glow {
+		0%, 100% {
+			filter: brightness(1) drop-shadow(0 0 5px rgba(255,255,255,0.3));
+		}
+		25% {
+			filter: brightness(1.15) drop-shadow(0 0 15px rgba(255,255,255,0.6));
+		}
+		50% {
+			filter: brightness(1.1) drop-shadow(0 0 20px rgba(255,255,255,0.5));
+		}
+		75% {
+			filter: brightness(1.15) drop-shadow(0 0 15px rgba(255,255,255,0.6));
+		}
 	}
 </style>

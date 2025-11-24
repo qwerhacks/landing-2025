@@ -53,15 +53,15 @@
 			bind:value={text}
 			type="email"
 			placeholder="Enter your email for updates"
-			class="w-full px-5 py-2 leading-tight text-gray-900 bg-white appearance-none font-reactor7 lg:text-2xl xl:text-4xl focus:shadow-outline"
-			style="border-radius:50px"
+			class="w-full px-5 py-2 leading-tight text-gray-900 bg-white appearance-none font-montserrat_alternates lg:text-2xl xl:text-3xl focus:shadow-outline"
+			style="border-radius:50px; box-shadow: 0 8px 20px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.15);"
 		/>
 		{#if !loading}
 			<button
 				type="submit"
 				id="submit"
 				class="px-3 py-3 w-[40px] h-[40px] sm:w-[50px] sm:h-[50px]"
-				style="border-radius:100%;aspect-ratio:1/1;background:#05034a"
+				style="border-radius:100%;aspect-ratio:1/1;background:#D4AF37;box-shadow: 0 6px 16px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.2);"
 			>
 				<img src={Arrow} />
 			</button>
@@ -71,20 +71,20 @@
 				type="submit"
 				id="submit"
 				class="px-2 py-2"
-				style="border-radius:100%;aspect-ratio:1/1;width:50px;height:50px;background:#05034a"
+				style="border-radius:100%;aspect-ratio:1/1;width:50px;height:50px;background:#D4AF37;box-shadow: 0 6px 16px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.2);"
 			>
 				<Circle2 size="30" colorOuter="#fff" colorCenter="#fff" colorInner="#fff" />
 			</button>
 		{/if}
 	{:else if success}
 		<div>
-			<p class="text-center font-reactor7 text-white text-xl lg:text-5xl">
+			<p class="text-center font-montserrat_alternates7 text-white text-xl lg:text-5xl">
 				Thank you! Please keep an eye on your email for more info.
 			</p>
 		</div>
 	{:else}
 		<div>
-			<p class="text-center font-reactor7 text-white text-xl lg:text-5xl">
+			<p class="text-center font-montserrat_alternates7 text-white text-xl lg:text-5xl">
 				Error encountered. Please reload and try again.
 			</p>
 		</div>
@@ -93,13 +93,22 @@
 </form>
 
 <style>
-	@import url(https://db.onlinewebfonts.com/c/3101d0058e2d7317cd5a5af7a1216ff3?family=Reactor7);
-	input::placeholder {
+	/* Ensure placeholder uses the same Montserrat font defined in app.postcss
+	   Add vendor-prefixed selectors for broad browser support and fallbacks. */
+	input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 		text-align: center;
-		font-family: 'Reactor7', monospace;
+		font-family: 'Montserrat Alternates', sans-serif;
 	}
-	input,
-	button {
-		outline: solid 8px #05034a;
+	input::-moz-placeholder { /* Firefox 19+ */
+		text-align: center;
+		font-family: 'Montserrat Alternates', sans-serif;
+	}
+	input:-ms-input-placeholder { /* IE 10+ */
+		text-align: center;
+		font-family: 'Montserrat Alternates', sans-serif;
+	}
+	input::placeholder { /* Standard */
+		text-align: center;
+		font-family: 'Montserrat Alternates', sans-serif;
 	}
 </style>
